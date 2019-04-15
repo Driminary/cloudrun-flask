@@ -1,0 +1,8 @@
+<!doctype html>
+<title>Hello from Flask on Cloud Run</title>
+{% if target %}
+  <h1>Hello {{ target }}!</h1>
+{% else %}
+  <h1>Hello World!</h1>
+{% endif %}
+<p>This is the {{ env }} environment running on Google Cloud Run</p>

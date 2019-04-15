@@ -2,7 +2,7 @@
 import os
 
 # Get Flask and associated modules
-from flask import Flask, request
+from flask import Flask, request, render_template
 
 # Define the Flask app name from the filename
 app = Flask(__name__)
@@ -18,9 +18,7 @@ env = os.environ.get('appenv', 'Development')
 @app.route('/')
 def hello_world():
     target = request.args.get('target', 'World')
-    return \
-        'Hello {}!\n'.format(target) + \
-        'This is running in the {} environment on Cloud Run!\n'.format(env)
+    return render_template('body.html',target=target,env=env)
 
 ##############
 # End Routes #
