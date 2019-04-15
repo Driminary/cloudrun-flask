@@ -20,7 +20,7 @@ def hello_world():
     target = request.args.get('target', 'World')
     return \
         'Hello {}!\n'.format(target) + \
-        'This is running in the {} environment!\n'.format(env)
+        'This is running in the {} environment on Cloud Run!\n'.format(env)
 
 ##############
 # End Routes #
