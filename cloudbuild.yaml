@@ -7,6 +7,6 @@ steps:
   args: ['push', 'gcr.io/$PROJECT_ID/cr-flask']
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'cr-flask', '--set-env-vars', 'appenv=Production', '--image', 'gcr.io/$PROJECT_ID/cr-flask', '--region', 'us-central1']
+  args: ['beta', 'run', 'deploy', 'cr-flask', '--allow-unauthenticated', '--image', 'gcr.io/$PROJECT_ID/cr-flask', '--region', 'us-central1', '--set-env-vars', 'appenv=Production']
 images:
 - gcr.io/$PROJECT_ID/cr-flask
