@@ -20,10 +20,16 @@ def hello_world():
     target = request.args.get('target', 'World')
     return render_template('body.html',target=target,env=env)
 
-# API
-@app.route('/api')
+# API Root
+@app.route('/api/')
 def api_world():
     target = request.args.get('target', 'World')
+    return jsonify(target,env)
+
+# API Target
+
+@app.route('/api/<target>')
+def api_target(target):
     return jsonify(target,env)
 
 ##############
