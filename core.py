@@ -24,7 +24,7 @@ def hello_world():
 @app.route('/api/')
 def api_world():
     target = request.args.get('target', 'World')
-    return jsonify(target,env)
+    return jsonify(target=target,environment=env)
 
 # API Target
 
