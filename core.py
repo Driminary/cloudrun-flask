@@ -30,7 +30,7 @@ def api_world():
 
 @app.route('/api/<target>')
 def api_target(target):
-    return jsonify(target,env)
+    return jsonify(target=target,environment=env)
 
 ##############
 # End Routes #
