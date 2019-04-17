@@ -5,7 +5,7 @@ steps:
   # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
   args: ['push', 'gcr.io/$PROJECT_ID/cr-flask']
-  # Deploy container image to Cloud Run
+  # Deploy container image to Cloud Run production service
 - name: 'gcr.io/cloud-builders/gcloud'
   args: ['beta', 'run', 'deploy', 'cr-flask', '--allow-unauthenticated', '--image', 'gcr.io/$PROJECT_ID/cr-flask', '--region', 'us-central1', '--set-env-vars', 'appenv=Production']
 images:
